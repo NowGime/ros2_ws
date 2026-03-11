@@ -1,0 +1,16 @@
+[2.039s] Invoking command in '/home/student/ros2_ws/build/exam_robot': PYTHONPATH=/home/student/ros2_ws/build/exam_robot/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/student/ros2_ws/install/exam_robot/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/student/ros2_ws/build/exam_robot/build --no-deps symlink_data
+[2.789s] running develop
+[3.281s] running egg_info
+[3.317s] writing exam_robot.egg-info/PKG-INFO
+[3.317s] writing dependency_links to exam_robot.egg-info/dependency_links.txt
+[3.318s] writing requirements to exam_robot.egg-info/requires.txt
+[3.318s] writing top-level names to exam_robot.egg-info/top_level.txt
+[3.417s] reading manifest file 'exam_robot.egg-info/SOURCES.txt'
+[3.419s] writing manifest file 'exam_robot.egg-info/SOURCES.txt'
+[3.478s] running build_ext
+[3.479s] Creating /home/student/ros2_ws/install/exam_robot/lib/python3.12/site-packages/exam-robot.egg-link (link to .)
+[3.480s] 
+[3.480s] Installed /home/student/ros2_ws/build/exam_robot
+[3.480s] running symlink_data
+[3.480s] error: can't copy '/home/student/ros2_ws/build/exam_robot/resource/exam_robot': doesn't exist or not a regular file
+[3.536s] Invoked command in '/home/student/ros2_ws/build/exam_robot' returned '1': PYTHONPATH=/home/student/ros2_ws/build/exam_robot/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/student/ros2_ws/install/exam_robot/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/student/ros2_ws/build/exam_robot/build --no-deps symlink_data

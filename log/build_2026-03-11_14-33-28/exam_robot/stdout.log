@@ -1,0 +1,18 @@
+running develop
+running egg_info
+writing exam_robot.egg-info/PKG-INFO
+writing dependency_links to exam_robot.egg-info/dependency_links.txt
+writing entry points to exam_robot.egg-info/entry_points.txt
+writing requirements to exam_robot.egg-info/requires.txt
+writing top-level names to exam_robot.egg-info/top_level.txt
+reading manifest file 'exam_robot.egg-info/SOURCES.txt'
+writing manifest file 'exam_robot.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/student/ros2_ws/install/exam_robot/lib/python3.12/site-packages/exam-robot.egg-link (link to .)
+Installing battery_node script to /home/student/ros2_ws/install/exam_robot/bin
+Installing distance_sensor script to /home/student/ros2_ws/install/exam_robot/bin
+Installing robot_controller script to /home/student/ros2_ws/install/exam_robot/bin
+Installing status_display script to /home/student/ros2_ws/install/exam_robot/bin
+
+Installed /home/student/ros2_ws/build/exam_robot
+running symlink_data

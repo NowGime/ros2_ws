@@ -1,0 +1,168 @@
+<?xml version="1.0"?>
+<robot name="exam_robot">
+
+  <!-- ==================== МАТЕРИАЛЫ ==================== -->
+  <!-- Определяем цвета для звеньев -->
+  <material name="blue">
+    <color rgba="0.0 0.0 1.0 1.0"/>  <!-- Синий -->
+  </material>
+  
+  <material name="black">
+    <color rgba="0.1 0.1 0.1 1.0"/>  <!-- Черный -->
+  </material>
+  
+  <material name="red">
+    <color rgba="1.0 0.0 0.0 1.0"/>  <!-- Красный -->
+  </material>
+
+  <!-- ==================== БАЗОВОЕ ЗВЕНО (КОРПУС) ==================== -->
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <box size="0.4 0.3 0.1"/>  <!-- длина 0.4м, ширина 0.3м, высота 0.1м -->
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>  <!-- Центр корпуса в начале координат -->
+      <material name="blue"/>
+    </visual>
+    
+    <!-- Добавим коллизию для физики (опционально, но полезно) -->
+    <collision>
+      <geometry>
+        <box size="0.4 0.3 0.1"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </collision>
+    
+    <!-- Инерция для динамики (минимальная масса) -->
+    <inertial>
+      <mass value="1.0"/>
+      <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
+      <origin xyz="0 0 0"/>
+    </inertial>
+  </link>
+
+  <!-- ==================== ЛЕВОЕ КОЛЕСО ==================== -->
+  <link name="left_wheel">
+    <visual>
+      <geometry>
+        <cylinder radius="0.08" length="0.04"/>  <!-- Радиус 0.08м, высота 0.04м -->
+      </geometry>
+      <!-- Поворот на 90° вокруг Y, чтобы цилиндр был вертикален (ось цилиндра вдоль Y) -->
+      <origin rpy="1.5708 0 0" xyz="0 0 0"/>  <!-- 90° = π/2 радиан -->
+      <material name="black"/>
+    </visual>
+    
+    <collision>
+      <geometry>
+        <cylinder radius="0.08" length="0.04"/>
+      </geometry>
+      <origin rpy="1.5708 0 0" xyz="0 0 0"/>
+    </collision>
+    
+    <inertial>
+      <mass value="0.2"/>
+      <inertia ixx="0.0001" ixy="0.0" ixz="0.0" iyy="0.0001" iyz="0.0" izz="0.0001"/>
+      <origin xyz="0 0 0"/>
+    </inertial>
+  </link>
+
+  <!-- СУСТАВ для левого колеса -->
+  <joint name="left_wheel_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="left_wheel"/>
+    <!-- Позиция: y = +0.17м (слева), x и z по центру корпуса -->
+    <origin xyz="0 0.17 0" rpy="0 0 0"/>
+    <!-- Ось вращения: вокруг Z (в системе координат сустава) -->
+    <axis xyz="0 0 1"/>
+    
+    <!-- Пределы скорости и усилия (опционально) -->
+    <limit effort="10" velocity="10"/>
+    <dynamics damping="0.1" friction="0.1"/>
+  </joint>
+
+  <!-- ==================== ПРАВОЕ КОЛЕСО ==================== -->
+  <link name="right_wheel">
+    <visual>
+      <geometry>
+        <cylinder radius="0.08" length="0.04"/>
+      </geometry>
+      <!-- Тот же поворот на 90° -->
+      <origin rpy="1.5708 0 0" xyz="0 0 0"/>
+      <material name="black"/>
+    </visual>
+    
+    <collision>
+      <geometry>
+        <cylinder radius="0.08" length="0.04"/>
+      </geometry>
+      <origin rpy="1.5708 0 0" xyz="0 0 0"/>
+    </collision>
+    
+    <inertial>
+      <mass value="0.2"/>
+      <inertia ixx="0.0001" ixy="0.0" ixz="0.0" iyy="0.0001" iyz="0.0" izz="0.0001"/>
+      <origin xyz="0 0 0"/>
+    </inertial>
+  </link>
+
+  <!-- СУСТАВ для правого колеса -->
+  <joint name="right_wheel_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="right_wheel"/>
+    <!-- Позиция: y = -0.17м (справа) -->
+    <origin xyz="0 -0.17 0" rpy="0 0 0"/>
+    <!-- Ось вращения: вокруг Z -->
+    <axis xyz="0 0 1"/>
+    
+    <limit effort="10" velocity="10"/>
+    <dynamics damping="0.1" friction="0.1"/>
+  </joint>
+
+  <!-- ==================== ДАТЧИК РАССТОЯНИЯ ==================== -->
+  <link name="sensor_link">
+    <visual>
+      <geometry>
+        <box size="0.05 0.05 0.05"/>  <!-- Кубик 5×5×5 см -->
+      </geometry>
+      <!-- Позиция относительно сустава будет задана в joint, здесь оставляем 0 -->
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <material name="red"/>
+    </visual>
+    
+    <collision>
+      <geometry>
+        <box size="0.05 0.05 0.05"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </collision>
+    
+    <inertial>
+      <mass value="0.05"/>
+      <inertia ixx="0.00001" ixy="0.0" ixz="0.0" iyy="0.00001" iyz="0.0" izz="0.00001"/>
+      <origin xyz="0 0 0"/>
+    </inertial>
+  </link>
+
+  <!-- СУСТАВ для датчика (FIXED) -->
+  <joint name="sensor_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="sensor_link"/>
+    <!-- Позиция: x = +0.2м (спереди), z = +0.08м (сверху) -->
+    <!-- С учетом размеров корпуса: корпус от -0.2 до +0.2 по x, от -0.15 до +0.15 по y -->
+    <!-- Датчик выступает спереди на 0.2м от центра корпуса -->
+    <origin xyz="0.2 0 0.08" rpy="0 0 0"/>
+  </joint>
+
+  <!-- ==================== ПРИМЕЧАНИЯ ==================== -->
+  <!--
+    Визуализация в RViz:
+    - base_link: синий прямоугольник 40×30×10 см
+    - left_wheel: черный цилиндр (радиус 8см, толщина 4см) слева
+    - right_wheel: черный цилиндр справа
+    - sensor_link: красный кубик 5×5×5 см спереди сверху
+    
+    Колеса могут вращаться непрерывно вокруг оси Z
+    Датчик жестко закреплен на корпусе
+  -->
+
+</robot>    

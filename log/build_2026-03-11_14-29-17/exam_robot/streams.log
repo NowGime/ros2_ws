@@ -1,0 +1,21 @@
+[1.867s] Invoking command in '/home/student/ros2_ws/build/exam_robot': PYTHONPATH=/home/student/ros2_ws/build/exam_robot/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/student/ros2_ws/install/exam_robot/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/student/ros2_ws/build/exam_robot/build --no-deps symlink_data
+[2.645s] running develop
+[3.168s] running egg_info
+[3.205s] writing exam_robot.egg-info/PKG-INFO
+[3.205s] writing dependency_links to exam_robot.egg-info/dependency_links.txt
+[3.206s] writing entry points to exam_robot.egg-info/entry_points.txt
+[3.206s] writing requirements to exam_robot.egg-info/requires.txt
+[3.206s] writing top-level names to exam_robot.egg-info/top_level.txt
+[3.301s] reading manifest file 'exam_robot.egg-info/SOURCES.txt'
+[3.302s] writing manifest file 'exam_robot.egg-info/SOURCES.txt'
+[3.353s] running build_ext
+[3.356s] Creating /home/student/ros2_ws/install/exam_robot/lib/python3.12/site-packages/exam-robot.egg-link (link to .)
+[3.358s] Installing battery_node script to /home/student/ros2_ws/install/exam_robot/bin
+[3.358s] Installing distance_sensor script to /home/student/ros2_ws/install/exam_robot/bin
+[3.359s] Installing robot_controller script to /home/student/ros2_ws/install/exam_robot/bin
+[3.359s] Installing status_display script to /home/student/ros2_ws/install/exam_robot/bin
+[3.361s] 
+[3.361s] Installed /home/student/ros2_ws/build/exam_robot
+[3.361s] running symlink_data
+[3.362s] error: can't copy '/home/student/ros2_ws/build/exam_robot/resource/exam_robot': doesn't exist or not a regular file
+[3.422s] Invoked command in '/home/student/ros2_ws/build/exam_robot' returned '1': PYTHONPATH=/home/student/ros2_ws/build/exam_robot/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/student/ros2_ws/install/exam_robot/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/student/ros2_ws/build/exam_robot/build --no-deps symlink_data

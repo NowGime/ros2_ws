@@ -1,0 +1,8 @@
+Metadata-Version: 2.1
+Name: exam-robot
+Version: 0.0.1
+Summary: ROS2 package for exam robot with battery, distance sensor, and controller
+Maintainer: student
+Maintainer-email: student@example.com
+License: Apache License 2.0
+Provides-Extra: test

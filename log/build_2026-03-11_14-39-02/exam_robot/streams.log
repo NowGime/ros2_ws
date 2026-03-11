@@ -1,0 +1,42 @@
+[1.960s] Invoking command in '/home/student/ros2_ws/build/exam_robot': PYTHONPATH=/home/student/ros2_ws/build/exam_robot/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/student/ros2_ws/install/exam_robot/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/student/ros2_ws/build/exam_robot/build --no-deps symlink_data
+[2.241s] /usr/lib/python3/dist-packages/setuptools/dist.py:744: SetuptoolsDeprecationWarning: Invalid dash-separated options
+[2.241s] !!
+[2.241s] 
+[2.241s]         ********************************************************************************
+[2.242s]         Usage of dash-separated 'script-dir' will not be supported in future
+[2.242s]         versions. Please use the underscore name 'script_dir' instead.
+[2.242s] 
+[2.242s]         This deprecation is overdue, please update your project and remove deprecated
+[2.242s]         calls to avoid build errors in the future.
+[2.243s] 
+[2.243s]         See https://setuptools.pypa.io/en/latest/userguide/declarative_config.html for details.
+[2.243s]         ********************************************************************************
+[2.243s] 
+[2.244s] !!
+[2.244s]   opt = self.warn_dash_deprecation(opt, section)
+[2.722s] running develop
+[3.239s] running egg_info
+[3.290s] writing exam_robot.egg-info/PKG-INFO
+[3.290s] writing dependency_links to exam_robot.egg-info/dependency_links.txt
+[3.290s] writing entry points to exam_robot.egg-info/entry_points.txt
+[3.291s] writing requirements to exam_robot.egg-info/requires.txt
+[3.291s] writing top-level names to exam_robot.egg-info/top_level.txt
+[3.383s] reading manifest file 'exam_robot.egg-info/SOURCES.txt'
+[3.384s] writing manifest file 'exam_robot.egg-info/SOURCES.txt'
+[3.425s] running build_ext
+[3.425s] Creating /home/student/ros2_ws/install/exam_robot/lib/python3.12/site-packages/exam-robot.egg-link (link to .)
+[3.450s] Installing battery_node script to /home/student/ros2_ws/install/exam_robot/lib/exam_robot
+[3.451s] Installing distance_sensor script to /home/student/ros2_ws/install/exam_robot/lib/exam_robot
+[3.451s] Installing robot_controller script to /home/student/ros2_ws/install/exam_robot/lib/exam_robot
+[3.451s] Installing status_display script to /home/student/ros2_ws/install/exam_robot/lib/exam_robot
+[3.452s] 
+[3.452s] Installed /home/student/ros2_ws/build/exam_robot
+[3.452s] running symlink_data
+[3.452s] symbolically linking /home/student/ros2_ws/build/exam_robot/resource/exam_robot -> /home/student/ros2_ws/install/exam_robot/share/ament_index/resource_index/packages
+[3.453s] symbolically linking /home/student/ros2_ws/build/exam_robot/package.xml -> /home/student/ros2_ws/install/exam_robot/share/exam_robot
+[3.453s] creating /home/student/ros2_ws/install/exam_robot/share/exam_robot/launch
+[3.453s] symbolically linking /home/student/ros2_ws/build/exam_robot/launch/robot_system.launch.py -> /home/student/ros2_ws/install/exam_robot/share/exam_robot/launch
+[3.453s] creating /home/student/ros2_ws/install/exam_robot/share/exam_robot/urdf
+[3.453s] symbolically linking /home/student/ros2_ws/build/exam_robot/urdf/exam_robot.urdf -> /home/student/ros2_ws/install/exam_robot/share/exam_robot/urdf
+[3.454s] creating /home/student/ros2_ws/install/exam_robot/share/exam_robot/config
+[3.497s] Invoked command in '/home/student/ros2_ws/build/exam_robot' returned '0': PYTHONPATH=/home/student/ros2_ws/build/exam_robot/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/student/ros2_ws/install/exam_robot/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/student/ros2_ws/build/exam_robot/build --no-deps symlink_data
